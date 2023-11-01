@@ -1,10 +1,6 @@
 package programmers.level0;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class 배열_조각하기 {
     public int[] solution(int[] arr, int[] query) {
