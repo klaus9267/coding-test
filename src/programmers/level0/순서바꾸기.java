@@ -16,6 +16,9 @@ public class 순서바꾸기 {
         for (int i : arr2) {
             list.add(i);
         }
+        
         return list.stream().mapToInt(Integer::intValue).toArray();
     }
 }
+//return IntStream.range(0, num_list.length).map(i -> num_list[(i + n) % num_list.length]).toArray();
+// 미친 풀이
