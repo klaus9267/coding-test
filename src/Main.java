@@ -1,18 +1,28 @@
-import programmers.level1.공원_산책;
-
-import java.util.Arrays;
+import java.math.BigInteger;
+import java.util.Scanner;
 
 public class Main {
 
-  public static void main(String[] args) {
-    공원_산책 s = new 공원_산책();
-    System.out.println("res : " + Arrays.toString(s.solution(new String[]{"SOO", "OOO", "OOO"}, new String[]{"E 2", "S 2", "W 1"})));
-    System.out.println("ans : [2, 1]");
-    System.out.println();
-    System.out.println("res : " + Arrays.toString(s.solution(new String[]{"SOO", "OXX", "OOO"}, new String[]{"E 2", "S 2", "W 1"})));
-    System.out.println("ans : [0, 1]");
-    System.out.println();
-    System.out.println("res : " + Arrays.toString(s.solution(new String[]{"OSO", "OOO", "OXO", "OOO"}, new String[]{"E 2", "S 3", "W 1"})));
-    System.out.println("ans : [0, 0]");
+  public static void main(String[] args) throws Exception {
+    Scanner sc = new Scanner(System.in);
+
+    for (int i = 0; i < 3; i++) {
+      BigInteger s = BigInteger.valueOf(0L);
+
+      int n = sc.nextInt();
+      for (int j = 0; j < n; j++) {
+        BigInteger s1 = new BigInteger(sc.next());
+        s = s.add(s1);
+      }
+
+      String result = switch (s.compareTo(BigInteger.ZERO)) {
+        case 0 -> "0";
+        case 1 -> "+";
+        case -1 -> "-";
+        default -> "error";
+      };
+
+      System.out.println(result);
+    }
   }
 }
